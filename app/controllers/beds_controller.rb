@@ -18,7 +18,7 @@ class BedsController < ApplicationController
 
   # GET /beds/new
   def new
-    @bed = current_user.days.build
+    @bed = current_user.beds.build
   end
 
   # GET /beds/1/edit
@@ -28,7 +28,7 @@ class BedsController < ApplicationController
   # POST /beds
   # POST /beds.json
   def create
-    @bed = current_user.days.new(bed_params)
+    @bed = current_user.beds.new(bed_params)
 
     respond_to do |format|
       if @bed.save
