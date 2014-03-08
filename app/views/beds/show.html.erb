@@ -1,0 +1,61 @@
+<p id="notice"><%= notice %></p>
+<table>
+  <thead>
+    <tr>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th>Max bookable</th>
+      <th>Max days before</th>
+      <th>Payment method</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+      <tr>
+        <td><%= @bed.start_date %></td>
+        <td><%= @bed.end_date %></td>
+        <td><%= @bed.price %></td>
+        <td><%= @bed.quantity %></td>
+        <td><%= @bed.name %></td>
+        <td><%= @bed.description %></td>
+        <td><%= @bed.image %></td>
+        <td><%= @bed.max_bookable %></td>
+        <td><%= @bed.max_days_before %></td>
+        <td><%= @bed.payment_method %></td>
+        <td><%= link_to 'Edit', edit_bed_path(@bed) %> |
+        <%= link_to 'Back', beds_path %></td>
+      </tr>
+  </tbody>
+</table>
+<br>
+<%= @availability %>
+
+<div id="beds">
+  <h2 id="month">
+    <%= link_to "<", date: @date.prev_month %>
+    <%= @date.strftime("%B %Y") %>
+    <%= link_to ">", date: @date.next_month %>
+  </h2>
+  <%= calendar @date do |date| %>
+    <%= date.day %>
+    <% if date < Date.today %>
+      <p>Unavailable</p>
+    <% elsif @availability[date] %>
+      <% if @availability[date] <= 0 %>
+        <p>Unavailable</p>
+      <% else %>
+        <p><%= @availability[date] %> <%= link_to 'Beds Available', new_reservation_path(:bed_id => @bed.id) %></p>
+      <% end %>
+    <% else %>
+      <p><%= @bed.quantity %> <%= link_to 'Beds Available', new_reservation_path(:bed_id => @bed.id) %></p>
+    <% end %>
+  <% end %>
+</div>

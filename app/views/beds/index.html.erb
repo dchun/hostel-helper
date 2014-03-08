@@ -1,0 +1,45 @@
+<h1>Listing beds</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Start date</th>
+      <th>End date</th>
+      <th>Price</th>
+      <th>Quantity</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Image</th>
+      <th>Max bookable</th>
+      <th>Max days before</th>
+      <th>Payment method</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @beds.each do |bed| %>
+      <tr>
+        <td><%= bed.start_date %></td>
+        <td><%= bed.end_date %></td>
+        <td><%= bed.price %></td>
+        <td><%= bed.quantity %></td>
+        <td><%= bed.name %></td>
+        <td><%= bed.description %></td>
+        <td><%= bed.image %></td>
+        <td><%= bed.max_bookable %></td>
+        <td><%= bed.max_days_before %></td>
+        <td><%= bed.payment_method %></td>
+        <td><%= link_to 'Show', bed %></td>
+        <td><%= link_to 'Edit', edit_bed_path(bed) %></td>
+        <td><%= link_to 'Destroy', bed, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Bed', new_bed_path %>

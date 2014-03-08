@@ -1,0 +1,28 @@
+<h1>Reservations</h1>
+
+<% @reservations.each do |reservation| %>
+  <%= reservation.bed.name %> |
+  <%= reservation.arrival %> |
+  <%= reservation.departure %> |
+  <%= reservation.name %> |
+  <%= reservation.quantity %> |
+  <br>
+<% end %>
+
+<div id="reservations">
+  <h2 id="month">
+    <%= link_to "<", date: @date.prev_month %>
+    <%= @date.strftime("%B %Y") %>
+    <%= link_to ">", date: @date.next_month %>
+  </h2>
+  <%= calendar @date do |date| %>
+    <%= date.day %>
+    <% if @reservations_by_arrival[date] %>
+      <ul>
+        <% @reservations_by_arrival[date].each do |reservation| %>
+          <li><%= link_to reservation.name, reservation %></li>
+        <% end %>
+      </ul>
+    <% end %>
+  <% end %>
+</div>

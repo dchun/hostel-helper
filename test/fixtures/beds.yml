@@ -1,0 +1,29 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  start_date: 2013-11-12
+  end_date: 2013-11-12
+  price: 
+  price: 
+  quantity: 1
+  name: MyString
+  description: MyText
+  image: MyString
+  max_bookable: 1
+  max_days_before: 1
+  payment_method: MyString
+  user_id: 
+
+two:
+  start_date: 2013-11-12
+  end_date: 2013-11-12
+  price: 
+  price: 
+  quantity: 1
+  name: MyString
+  description: MyText
+  image: MyString
+  max_bookable: 1
+  max_days_before: 1
+  payment_method: MyString
+  user_id: 

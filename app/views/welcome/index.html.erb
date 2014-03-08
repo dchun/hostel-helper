@@ -1,0 +1,35 @@
+<div class="container">
+    <h1>Available Beds</h1>
+
+<table class="table">
+  <thead>
+    <tr>
+      <th>Image</th>
+      <th>User</th>
+      <th>Name</th>
+      <th>Description</th>
+      <th>Price</th>
+      <th>Max</th>
+      <th>Payment</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @beds.each do |bed| %>
+      <tr>
+        <td><%= bed.image %></td>
+        <td><%= bed.user.email %></td>
+        <td><%= bed.name %></td>
+        <td><%= bed.description %></td>
+        <td><%= bed.price %></td>
+        <td><%= bed.max_days_before %></td>
+        <td><%= bed.payment_method %></td>
+        <td><%= link_to 'Reserve', new_reservation_path(bed_id: bed.id) %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+</div>

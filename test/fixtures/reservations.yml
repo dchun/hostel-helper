@@ -1,0 +1,21 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  arrival: 2013-11-12
+  departure: 2013-11-12
+  name: MyString
+  email: MyString
+  phone: MyString
+  message: MyText
+  quantity: 1
+  beds_id: 
+
+two:
+  arrival: 2013-11-12
+  departure: 2013-11-12
+  name: MyString
+  email: MyString
+  phone: MyString
+  message: MyText
+  quantity: 1
+  beds_id: 

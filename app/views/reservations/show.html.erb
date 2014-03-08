@@ -1,0 +1,40 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Arrival:</strong>
+  <%= @reservation.arrival %>
+</p>
+
+<p>
+  <strong>Departure:</strong>
+  <%= @reservation.departure %>
+</p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @reservation.name %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @reservation.email %>
+</p>
+
+<p>
+  <strong>Phone:</strong>
+  <%= @reservation.phone %>
+</p>
+
+<p>
+  <strong>Message:</strong>
+  <%= @reservation.message %>
+</p>
+
+<p>
+  <strong>Quantity:</strong>
+  <%= @reservation.quantity %>
+</p>
+
+
+<%= link_to 'Edit', edit_reservation_path(@reservation) %> | 
+<%= link_to 'Destroy', @reservation, method: :delete, data: { confirm: 'Are you sure?' } %>
